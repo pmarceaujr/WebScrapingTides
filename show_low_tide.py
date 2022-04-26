@@ -17,3 +17,12 @@ soup = BeautifulSoup(web_page.content, 'html.parser')
 tide_table = soup.find('div', class_='tide_flex_start')
 print(tide_table.prettify())
 print("===========================================")
+for table in tide_table.find_all('table'):
+    # print(table)
+    for trows in table:
+        columns = trows.find_all('td')
+       # print(columns)
+        if (columns != [] and columns[0].text.strip() == 'Low Tide'):
+            what_tide = columns[0].text.strip()
+            print(columns[0].text.strip(),
+                  columns[1].text.strip(), columns[2].text.strip())
