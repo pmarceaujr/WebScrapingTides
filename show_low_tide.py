@@ -37,11 +37,11 @@ for table in tide_table.find_all('table'):
         elif (columns != [] and columns[0].text.strip() != 'High Tide'):
             sun_rise_txt, sun_rise_time, sun_set_txt, sun_set_time = utils.string_to_time(
                 columns[0].text.strip(), columns[1].text.strip())
-            if sun_rise_time < first_low_tide < sun_set_time:
-                print(sun_rise_txt, sun_rise_time, sun_set_txt, sun_set_time, what_tide, low_tide_date, first_low_tide,
-                      first_tide_height)
-            elif sun_rise_time < second_low_tide < sun_set_time:
-                print(sun_rise_txt, sun_rise_time, sun_set_txt, sun_set_time,
-                      what_tide, low_tide_date, second_low_tide, second_tide_height)
+            # if sun_rise_time < first_low_tide < sun_set_time:
+            print(sun_rise_txt, sun_rise_time, sun_set_txt, sun_set_time, what_tide, low_tide_date, first_low_tide,
+                  first_tide_height)
+            # elif sun_rise_time < second_low_tide < sun_set_time:
+            print(sun_rise_txt, sun_rise_time, sun_set_txt, sun_set_time,
+                  what_tide, low_tide_date, second_low_tide, second_tide_height)
             first_low_tide, first_tide_height, second_low_tide, second_tide_height = '', '', '', ''
             first_tide = 0
